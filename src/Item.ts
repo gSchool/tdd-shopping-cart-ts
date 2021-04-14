@@ -1,11 +1,13 @@
 export default class Item {
-    private name: string;
-    private price: number;
-    private onSale: boolean;
+    public name: string;
+    public price: number;
+    public quantity: number;
+    public onSale: boolean;
 
-    constructor(name: string, price: number, onSale: boolean) {
+    constructor(name: string, price: number, onSale: boolean, quantity: number = 1) {
         this.name = name;
         this.price = price;
         this.onSale = onSale;
+        this.quantity = quantity;
     }
 }
