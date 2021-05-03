@@ -8,6 +8,12 @@ You have been hired as a developer at Ali Snobba - a snobby online store where c
 1. Run `npm install`. 
 1. Submit the link to your work when completed.
 
+Some new data:
+
+1. Clone this repository.
+1. Run `npm install`. 
+1. Submit the link to your work when completed.
+
 Your task is to use tests to develop the remaining features of the shopping cart described below. Your workflow should look like this:
 
 * Write a failing test.
