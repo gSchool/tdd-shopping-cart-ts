@@ -1,29 +1,33 @@
 import Item from "./Item";
 
 export default class Cart {
-    items: Item[] = [];
-    totalPrice: number = 0;
+    public items: Item[] = [];
+    private _totalPrice: number = 0;
 
-    isEmpty() {
+    get totalPrice(): number {
+        return this._totalPrice;
+    }
+
+    isEmpty(): boolean {
         return this.items.length == 0;
     }
 
-    add(newItem: Item) {
+    add(newItem: Item): void {
         if (this.isEmpty()) {
             this.items.push(newItem);
         } else {
             this.updateItems(newItem)
         }
-        this.totalPrice += newItem.price * newItem.quantity;
+        this._totalPrice += newItem.price * newItem.quantity;
     }
 
-    itemizedList() {
+    itemizedList(): string[] {
         return this.items.map((item) => {
             return `${item.name} - ${item.quantity} - $${item.price}`;
         });
     }
 
-    updateItems(newItem: Item) {
+    updateItems(newItem: Item): void {
         for (const item of this.items) {
             if (item.name == newItem.name) {
                 item.quantity += newItem.quantity;
@@ -34,7 +38,7 @@ export default class Cart {
         }
     }
 
-    remove(newItem: Item) {
+    remove(newItem: Item): void {
         this.items = this.items.filter(current => current.name != newItem.name);
     }
 

@@ -8,7 +8,7 @@ describe('Cart', () => {
         cart = new Cart();
     });
 
-    test('should initialize as empty', () => {
+    test('should be empty on initialization', () => {
         expect(cart.items).toEqual([]);
         expect(cart.totalPrice).toEqual(0);
     });
